@@ -1,5 +1,5 @@
-# Aiogram3-Template
-Aiogram New Template
+# Aiogram 3x - Shablon
+
 
 
 - Ketma ketlikni bajaring:
@@ -24,5 +24,4 @@ Aiogram New Template
         ```
         python app.py
         ```
-
-# *E'tiboringiz uchun rahmat* Savollaringiz bo'lsa [Telegram](https://t.me/chogirmali_yigit)
+# [Yanada ko'proq malumot uchun aiogramni rasmiy sahifasiga o'ting](https://docs.aiogram.dev/en/dev-3.x/)

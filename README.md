@@ -3,7 +3,7 @@
 ### 1. Create virtual environment and install packages
 Windows
 ```shell
-python -m venv venv && venv\bin\activate && pip install -r requirements.txt
+python -m venv venv && .\venv\Scripts\activate && pip install -r requirements.txt
 ```
 
 Linux/Mac

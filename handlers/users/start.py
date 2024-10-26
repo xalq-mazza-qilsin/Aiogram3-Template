@@ -4,7 +4,7 @@ from aiogram.enums.parse_mode import ParseMode
 from aiogram.client.session.middlewares.request_logging import logger
 from loader import db, bot
 from data.config import ADMINS
-from utils.extra_datas import make_title
+from utils.shortcuts import safe_markdown
 
 router = Router()
 
@@ -34,9 +34,9 @@ async def do_start(message: types.Message):
         logger.info(error)
     if user:
         count = await db.count_users()
-        msg = (f"[{make_title(user['full_name'])}](tg://user?id={user['telegram_id']}) bazaga qo'shildi\.\nBazada {count} ta foydalanuvchi bor\.")
+        msg = (f"[{safe_markdown(user['full_name'])}](tg://user?id={user['telegram_id']}) bazaga qo'shildi\.\nBazada {count} ta foydalanuvchi bor\.")
     else:
-        msg = f"[{make_title(full_name)}](tg://user?id={telegram_id}) bazaga oldin qo'shilgan"
+        msg = f"[{safe_markdown(full_name)}](tg://user?id={telegram_id}) bazaga oldin qo'shilgan"
     for admin in ADMINS:
         try:
             await bot.send_message(
@@ -46,4 +46,4 @@ async def do_start(message: types.Message):
             )
         except Exception as error:
             logger.info(f"Data did not send to admin: {admin}. Error: {error}")
-    await message.answer(f"Assalomu alaykum {make_title(full_name)}\!", parse_mode=ParseMode.MARKDOWN_V2)
+    await message.answer(f"Assalomu alaykum {safe_markdown(full_name)}\!", parse_mode=ParseMode.MARKDOWN_V2)

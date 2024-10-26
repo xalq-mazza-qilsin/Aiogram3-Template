@@ -1,6 +1,7 @@
 from aiogram import Router
+from aiogram.enums import ChatType
 
-from filters import ChatPrivateFilter
+from filters import ChatTypeFilter
 
 
 def setup_routers() -> Router:
@@ -10,7 +11,7 @@ def setup_routers() -> Router:
     router = Router()
 
     # Agar kerak bo'lsa, o'z filteringizni o'rnating
-    start.router.message.filter(ChatPrivateFilter(chat_type=["private"]))
+    start.router.message.filter(ChatTypeFilter(chat_types=[ChatType.PRIVATE]))
 
     router.include_routers(admin.router, start.router, help.router, echo.router, error_handler.router)
 

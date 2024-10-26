@@ -1,2 +1,2 @@
-from .private_chat import ChatPrivateFilter
-from .admin import IsBotAdminFilter
+from .chat_type import ChatTypeFilter  # noqa
+from .admin import IsBotAdminFilter  # noqa

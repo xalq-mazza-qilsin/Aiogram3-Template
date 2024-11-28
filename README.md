@@ -23,6 +23,11 @@ Linux/Mac
 python3 app.py
 ```
 
+3. Compile translations in locales dir with this command
+```shell
+pybabel compile -d locales -D messages
+```
+
 # Set up Postgresql on server
 
 ### 1. Install postgresql (if needed)
